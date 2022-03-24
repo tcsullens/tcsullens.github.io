@@ -303,6 +303,13 @@ git merge -s recursive [-Xours, -Xtheirs] [master] topic
 
 ## Useful git-isms
 
+**Useful Command Reference**
+
+# Get just the commit-hash of the current commit
+```
+git rev-parse HEAD
+```
+
 **The triple dot**
 
 Show me the differences in either branch, or show me the commits reachable by either master or topic but _not by both_.
