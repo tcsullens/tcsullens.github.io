@@ -1,0 +1,29 @@
+# https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+
+[user]
+name = Tyler Sullens
+email = tyler.sullens@axios.com
+
+[core]
+	excludesFile = ~/.gitignore
+	pager = delta
+
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+
+[fetch]
+	prune=true
+
+[init]
+	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[diff]
+	colorMoved = default
+	algorithm = histogram
+
+[merge]
+	conflictstyle = zdiff3
