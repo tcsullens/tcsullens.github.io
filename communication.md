@@ -88,6 +88,7 @@ https://zapier.com/blog/slack-etiquette-at-zapier/
 https://slack.com/blog/collaboration/etiquette-tips-in-slack
 https://basecamp.com/guides/group-chat-problems 
 https://about.gitlab.com/handbook/communication/  
+https://37signals.com/how-we-communicate
 
 Stanford Lecturer Matt Abrahams speaks with guests about various communication topics - https://www.gsb.stanford.edu/business-podcasts/think-fast-talk-smart  
 
@@ -100,5 +101,5 @@ https://www.nature.com/articles/s41562-021-01196-4?utm_source=morning_brew
 > ...writing is humanity’s invention for storing knowledge over time.  
 >...I don’t know if you’re going to have the same “aha” moment where a developer realizes, “Oh my God, I’m going to be 20 times as productive if I write better documentation.” The organization will be 20 times as productive.  
 >I think a thing you learn, obviously in any kind of creative work, maybe in writing it’s especially vivid, is that all writing is rewriting, is what my sophomore English teacher said to me.  
->
+
 https://signalsandthreads.com/writing-technically/

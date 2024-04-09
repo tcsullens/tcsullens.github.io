@@ -16,6 +16,8 @@ A collection of links, thoughts on Engineering Management and Leadership
 
 [This Is What Impactful Engineering Leadership Looks Like](https://review.firstround.com/this-is-what-impactful-engineering-leadership-looks-like)
 
+[Manager Impact on Report Performance — Leadership Style and impact on reports](https://medium.com/@royrapoport/manager-impact-on-report-performance-1518e44fd62a)
+
 
 ### Podcasts
 
