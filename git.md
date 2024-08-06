@@ -1,5 +1,13 @@
 Git
 
+## Reading
+
+- https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+- https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/
+- https://www.jvt.me/posts/2024/07/12/things-know-commits/
+- https://www.conventionalcommits.org/en/v1.0.0/#summary
+
+
 ## Basic Git Setup (Mac OS / Linux)
 **Generate a ssh key:**
 
@@ -337,9 +345,6 @@ git log is capable of taking a date range or revision range (see the man or git 
 **What makes a good Commit, Pull Request**
 
 **PR**
-
-https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
-https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/
 
 1. A PR should be limited to solving a _single_ problem or achieving a singular goal.
 2. A PR should be comprimised of properly formatted commits representing single units of work
