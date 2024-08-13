@@ -25,9 +25,9 @@ git config --global user.email "tyler.sullens@fiscalnote.com"
 git config --global core.editor vim
 ```
 
-set your current branch to default for pushes — prevents *git push --set-upstream origin...*
+Automatically setup remote tracking:
 ```
-git config --global push.default current
+git config --global push.autoSetupRemote true
 ```
 
 set a global gitignore in your home directory — prevents committing e.g. `.idea/` to all `.gitignores`
@@ -35,6 +35,7 @@ set a global gitignore in your home directory — prevents committing e.g. `.ide
 git config --global core.excludesFile '~/.gitignore'
 ```
 
+Popular settings: https://jvns.ca/blog/2024/02/16/popular-git-config-options/
 **all config:** https://git-scm.com/docs/git-config
 
 **Pagination**
