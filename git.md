@@ -1,7 +1,7 @@
 Git 
 
 - [Getting Started](#getting-started)
-  - [Basic Git Setup(#basic-git-setup)
+  - [Basic Git Setup](#basic-git-setup)
   - [Config](#config)
     - [My Config](#my-config)
     - [Pagination](#pagination)
@@ -19,10 +19,10 @@ Git
   - [Inspecting git objects](#inspecting-git-objects)
   - [How does Git deal with revision history?](#how-does-git-deal-with-revision-history)
   
-  
+
 # Getting Started
 
-## Basic Git Setup (Mac OS / Linux)
+## Basic Git Setup
 **Generate a ssh key:**
 
 ```
