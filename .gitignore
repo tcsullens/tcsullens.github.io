@@ -1,0 +1,17 @@
+# Jekyll build files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby/Bundler
+.bundle/
+vendor/
+
+# macOS
+.DS_Store
+.DS_Store?
+
+# Temporary files
+tmp/
+temp/

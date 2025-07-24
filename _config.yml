@@ -1,0 +1,66 @@
+title: Tyler Sullens
+email: tcsullens@gmail.com
+description: >-
+  Senior Engineer with expertise in DevOps, Platform Engineering,
+  and Data Infrastructure. Based in Washington, DC.
+baseurl: ""
+url: "https://tcsullens.github.io"
+github_username: tsullens
+
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+header_pages:
+  - resume.md
+  - writing/index.md
+  - technical/index.md
+  - resources.md
+
+minima:
+  social_links:
+    github: tsullens
+    linkedin: tyler-sullens
+
+collections:
+  writing:
+    output: true
+    permalink: /:collection/:name/
+  technical:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "writing"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "technical"
+    values:
+      layout: "post"
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .mise.toml
+  - .bundle/

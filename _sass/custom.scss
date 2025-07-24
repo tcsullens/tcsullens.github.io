@@ -1,0 +1,335 @@
+// Custom styles for professional appearance with dark mode support
+
+// CSS Custom Properties for theming
+:root {
+  // Light mode colors (default)
+  --bg-color: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --text-color: #24292e;
+  --text-secondary: #586069;
+  --text-muted: #6a737d;
+  --border-color: #e1e4e8;
+  --border-secondary: #dfe2e5;
+  --accent-color: #0366d6;
+  --code-bg: #f6f8fa;
+  --code-border: #e1e4e8;
+  --code-text: rgba(27,31,35,0.05);
+}
+
+// Dark mode colors
+[data-theme="dark"] {
+  --bg-color: #0d1117;
+  --bg-secondary: #161b22;
+  --text-color: #c9d1d9;
+  --text-secondary: #8b949e;
+  --text-muted: #7d8590;
+  --border-color: #30363d;
+  --border-secondary: #21262d;
+  --accent-color: #58a6ff;
+  --code-bg: #161b22;
+  --code-border: #30363d;
+  --code-text: rgba(240,246,252,0.1);
+}
+
+// Improved typography
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Code blocks styling
+pre, code {
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+}
+
+// Dark mode toggle button
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  margin-left: 1rem;
+  
+  &:hover {
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+  }
+  
+  .theme-icon {
+    margin-right: 4px;
+  }
+}
+
+// Professional header styling
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  
+  .site-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  .site-nav {
+    display: flex;
+    align-items: center;
+  }
+}
+
+// Improved navigation
+.page-link {
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+  
+  &:hover {
+    color: var(--accent-color) !important;
+    text-decoration: none;
+  }
+  
+  &:visited {
+    color: var(--text-secondary) !important;
+  }
+}
+
+// Better spacing for content
+.page-content {
+  padding-top: 2rem;
+  background-color: var(--bg-color);
+}
+
+// Professional footer
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  
+  .footer-col {
+    color: var(--text-secondary);
+  }
+}
+
+// Enhanced home page styling
+.home {
+  h1 {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  h2 {
+    color: var(--accent-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// General page styling for all content
+.page-content {
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color) !important;
+  }
+  
+  h2 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+  }
+  
+  h3 {
+    color: var(--accent-color) !important;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  p, li, td, th {
+    color: var(--text-color);
+  }
+  
+  strong, b {
+    color: var(--text-color);
+    font-weight: 600;
+  }
+  
+  // Links in main content
+  a {
+    color: var(--accent-color);
+    
+    &:hover {
+      color: var(--accent-color);
+      opacity: 0.8;
+    }
+    
+    &:visited {
+      color: var(--accent-color);
+    }
+  }
+}
+
+// Technical content enhancements
+.post-content {
+  h1, h2, h3 {
+    color: var(--text-color);
+  }
+  
+  h2 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+  }
+  
+  // Code block improvements
+  pre {
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+    
+    code {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+  }
+  
+  // Inline code styling
+  code {
+    background-color: var(--code-text);
+    border-radius: 3px;
+    padding: 0.2em 0.4em;
+    color: var(--text-color);
+  }
+  
+  // Blockquote styling
+  blockquote {
+    border-left: 4px solid var(--border-secondary);
+    padding-left: 1rem;
+    color: var(--text-muted);
+    margin: 1rem 0;
+  }
+  
+  // Links
+  a {
+    color: var(--accent-color);
+    
+    &:hover {
+      color: var(--accent-color);
+      opacity: 0.8;
+    }
+  }
+}
+
+// Timestamp styling for technical content
+.post-meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  
+  &::before {
+    content: "📝 ";
+  }
+}
+
+// Responsive improvements
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 1.25rem !important;
+  }
+  
+  .page-link {
+    display: block;
+    padding: 0.5rem 0;
+  }
+  
+  .theme-toggle {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// Smooth transitions for all themed elements
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+// Prevent transition on page load
+.no-transition * {
+  transition: none !important;
+}
+
+// Ensure proper contrast for form elements
+input, textarea, select {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+  
+  &:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+  }
+}
+
+// Dark mode specific adjustments
+[data-theme="dark"] {
+  // Ensure images don't become too bright
+  img {
+    opacity: 0.9;
+  }
+  
+  // Adjust selection colors
+  ::selection {
+    background-color: rgba(88, 166, 255, 0.3);
+    color: var(--text-color);
+  }
+  
+  // Override minima theme defaults for dark mode
+  .site-header {
+    background-color: var(--bg-color) !important;
+    border-bottom-color: var(--border-color) !important;
+  }
+  
+  .site-footer {
+    background-color: var(--bg-secondary) !important;
+    border-top-color: var(--border-color) !important;
+  }
+  
+  .page-content {
+    background-color: var(--bg-color) !important;
+  }
+  
+  // Ensure all text elements use our color variables
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color) !important;
+  }
+  
+  p, span, div, li, td, th {
+    color: var(--text-color) !important;
+  }
+  
+  // Navigation links
+  .site-nav .page-link {
+    color: var(--text-secondary) !important;
+    
+    &:hover {
+      color: var(--accent-color) !important;
+    }
+  }
+  
+  // Site title
+  .site-title {
+    color: var(--text-color) !important;
+    
+    &:visited {
+      color: var(--text-color) !important;
+    }
+  }
+}
