@@ -5,7 +5,7 @@ description: >-
   and Data Infrastructure. Based in Washington, DC.
 baseurl: ""
 url: "https://tcsullens.github.io"
-github_username: tsullens
+github_username: tcsullens
 
 markdown: kramdown
 highlighter: rouge
@@ -23,7 +23,7 @@ header_pages:
 
 minima:
   social_links:
-    github: tsullens
+    github: tcsullens
     linkedin: tyler-sullens
 
 collections:

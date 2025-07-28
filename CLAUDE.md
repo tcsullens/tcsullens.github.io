@@ -19,17 +19,27 @@ Jekyll site for Tyler Sullens showcasing technical expertise, engineering leader
 
 ```
 ├── _config.yml           # Jekyll configuration
-├── _layouts/             # Custom layout overrides
-├── _includes/            # Custom header with dark mode toggle
-├── _sass/               # Custom SCSS styling
-├── _writing/            # Blog posts about leadership & communication
-├── _technical/          # Technical documentation and guides
-├── assets/              # CSS, JS, and other assets
-├── writing/             # Writing section index
-├── technical/           # Technical section index
-├── index.md             # Homepage
-├── resume.md            # Resume page
-└── resources.md         # Curated resources
+├── _layouts/
+│   ├── default.html      # Base layout with header/footer
+│   ├── home.html         # Homepage layout
+│   ├── page.html         # Static page layout
+│   └── post.html         # Blog post layout
+├── _includes/
+│   └── header.html       # Custom header with dark mode toggle
+├── _sass/
+│   └── custom.scss       # Custom SCSS styling with dark mode
+├── _writing/             # Blog posts about leadership & communication
+├── _technical/           # Technical documentation and guides
+├── assets/
+│   ├── js/
+│   │   └── theme-toggle.js  # Dark mode functionality
+│   └── main.scss         # Main stylesheet
+├── writing/              # Writing section index
+├── technical/            # Technical section index
+├── index.md              # Homepage
+├── resume.md             # Resume page
+├── resources.md          # Curated resources
+└── CLAUDE.md             # This file
 ```
 
 ## Development Preferences

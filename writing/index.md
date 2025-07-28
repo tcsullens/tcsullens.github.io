@@ -1,13 +1,11 @@
 ---
 layout: page
-title: Writing
+title: Notes
 permalink: /writing/
 ---
 
-# Engineering Leadership & Communication
+Scribblings from my experiences and readings.
 
-Thoughts and insights from my experiences and readings.
-
-## Recent Posts
-
-- [Engineering Communication](/writing/communication/) - Effective communication practices for technical teams and organizations
+---
+&nbsp;  
+[Engineering Communication](/writing/communication/) - Effective communication practices for technical teams and organizations

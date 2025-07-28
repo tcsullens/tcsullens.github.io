@@ -2,334 +2,580 @@
 
 // CSS Custom Properties for theming
 :root {
-  // Light mode colors (default)
-  --bg-color: #ffffff;
-  --bg-secondary: #f6f8fa;
-  --text-color: #24292e;
-  --text-secondary: #586069;
-  --text-muted: #6a737d;
-  --border-color: #e1e4e8;
-  --border-secondary: #dfe2e5;
-  --accent-color: #0366d6;
-  --code-bg: #f6f8fa;
-  --code-border: #e1e4e8;
-  --code-text: rgba(27,31,35,0.05);
+    // Light mode colors (default)
+    --bg-color: #ffffff;
+    --bg-secondary: #f6f8fa;
+    --text-color: #24292e;
+    --text-secondary: #586069;
+    --text-muted: #6a737d;
+    --border-color: #e1e4e8;
+    --border-secondary: #dfe2e5;
+    --accent-color: #0366d6;
+    --code-bg: #f6f8fa;
+    --code-border: #e1e4e8;
+    --code-text: rgba(27, 31, 35, 0.05);
 }
 
 // Dark mode colors
 [data-theme="dark"] {
-  --bg-color: #0d1117;
-  --bg-secondary: #161b22;
-  --text-color: #c9d1d9;
-  --text-secondary: #8b949e;
-  --text-muted: #7d8590;
-  --border-color: #30363d;
-  --border-secondary: #21262d;
-  --accent-color: #58a6ff;
-  --code-bg: #161b22;
-  --code-border: #30363d;
-  --code-text: rgba(240,246,252,0.1);
+    --bg-color: #0d1117;
+    --bg-secondary: #161b22;
+    --text-color: #c9d1d9;
+    --text-secondary: #8b949e;
+    --text-muted: #7d8590;
+    --border-color: #30363d;
+    --border-secondary: #21262d;
+    --accent-color: #58a6ff;
+    --code-bg: #29293d;
+    --code-border: #30363d;
+    --code-text: #eef0ff;
 }
 
 // Improved typography
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 // Code blocks styling
-pre, code {
-  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+pre,
+code {
+    font-family:
+        "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+        "Courier New", monospace;
 }
 
 // Dark mode toggle button
 .theme-toggle {
-  background: none;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 8px 12px;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 14px;
-  margin-left: 1rem;
-  
-  &:hover {
-    background-color: var(--bg-secondary);
-    color: var(--text-color);
-  }
-  
-  .theme-icon {
-    margin-right: 4px;
-  }
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    margin-left: 1rem;
+
+    &:hover {
+        background-color: var(--bg-secondary);
+        color: var(--text-color);
+    }
+
+    .theme-icon {
+        margin-right: 4px;
+    }
 }
 
 // Professional header styling
 .site-header {
-  border-bottom: 1px solid var(--border-color);
-  background-color: var(--bg-color);
-  
-  .site-title {
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: var(--text-color);
-  }
-  
-  .site-nav {
-    display: flex;
-    align-items: center;
-  }
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+
+    .site-title {
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: var(--text-color);
+    }
+
+    .site-nav {
+        display: flex;
+        align-items: center;
+    }
 }
 
 // Improved navigation
 .page-link {
-  color: var(--text-secondary) !important;
-  font-weight: 500;
-  
-  &:hover {
-    color: var(--accent-color) !important;
-    text-decoration: none;
-  }
-  
-  &:visited {
     color: var(--text-secondary) !important;
-  }
+    font-weight: 500;
+
+    &:hover {
+        color: var(--accent-color) !important;
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: var(--text-secondary) !important;
+    }
 }
 
 // Better spacing for content
 .page-content {
-  padding-top: 2rem;
-  background-color: var(--bg-color);
+    padding-top: 2rem;
+    background-color: var(--bg-color);
 }
 
-// Professional footer
+// Minimal footer styling
 .site-footer {
-  border-top: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
-  
-  .footer-col {
-    color: var(--text-secondary);
-  }
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+
+    .footer-content {
+        text-align: center;
+
+        p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--text-secondary);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--accent-color);
+                text-decoration: none;
+            }
+        }
+
+        .footer-separator {
+            margin: 0 0.5rem;
+            color: var(--text-muted);
+        }
+    }
 }
 
 // Enhanced home page styling
 .home {
-  h1 {
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-  }
-  
-  h2 {
-    color: var(--accent-color);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
+    h1 {
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+    }
+
+    h2 {
+        color: var(--accent-color);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
 }
 
 // General page styling for all content
 .page-content {
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color) !important;
-  }
-  
-  h2 {
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.3rem;
-  }
-  
-  h3 {
-    color: var(--accent-color) !important;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  p, li, td, th {
-    color: var(--text-color);
-  }
-  
-  strong, b {
-    color: var(--text-color);
-    font-weight: 600;
-  }
-  
-  // Links in main content
-  a {
-    color: var(--accent-color);
-    
-    &:hover {
-      color: var(--accent-color);
-      opacity: 0.8;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--text-color) !important;
     }
-    
-    &:visited {
-      color: var(--accent-color);
+
+    h2 {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.3rem;
     }
-  }
+
+    h3 {
+        color: var(--accent-color) !important;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p,
+    li,
+    td,
+    th {
+        color: var(--text-color);
+    }
+
+    strong,
+    b {
+        color: var(--text-color);
+        font-weight: 600;
+    }
+
+    // Links in main content
+    a {
+        color: var(--accent-color);
+
+        &:hover {
+            color: var(--accent-color);
+            opacity: 0.8;
+        }
+
+        &:visited {
+            color: var(--accent-color);
+        }
+    }
 }
 
 // Technical content enhancements
 .post-content {
-  h1, h2, h3 {
-    color: var(--text-color);
-  }
-  
-  h2 {
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.3rem;
-  }
-  
-  // Code block improvements
-  pre {
-    background-color: var(--code-bg);
-    border: 1px solid var(--code-border);
-    border-radius: 6px;
-    padding: 1rem;
-    overflow-x: auto;
-    
+    h1,
+    h2,
+    h3 {
+        color: var(--text-color);
+    }
+
+    h2 {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.3rem;
+    }
+
+    // Code block improvements
+    pre {
+        background-color: var(--code-bg) !important;
+        border: 1px solid var(--code-border);
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+        color: var(--text-color) !important;
+
+        code {
+            background-color: transparent !important;
+            border: none;
+            padding: 0;
+            color: inherit !important;
+            font-size: 0.9em;
+        }
+    }
+
+    // Inline code styling
     code {
-      background-color: transparent;
-      border: none;
-      padding: 0;
+        background-color: var(--code-bg) !important;
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        color: var(--text-color) !important;
+        font-size: 0.9em;
     }
-  }
-  
-  // Inline code styling
-  code {
-    background-color: var(--code-text);
-    border-radius: 3px;
-    padding: 0.2em 0.4em;
-    color: var(--text-color);
-  }
-  
-  // Blockquote styling
-  blockquote {
-    border-left: 4px solid var(--border-secondary);
-    padding-left: 1rem;
-    color: var(--text-muted);
-    margin: 1rem 0;
-  }
-  
-  // Links
-  a {
-    color: var(--accent-color);
-    
-    &:hover {
-      color: var(--accent-color);
-      opacity: 0.8;
+
+    // Fenced code blocks (```language)
+    .highlight {
+        background-color: var(--code-bg) !important;
+        border-radius: 6px;
+        border: 1px solid var(--code-border);
+
+        pre {
+            margin: 0;
+            border: none;
+            background-color: transparent !important;
+        }
     }
-  }
+
+    // Blockquote styling
+    blockquote {
+        border-left: 4px solid var(--border-secondary);
+        padding-left: 1rem;
+        color: var(--text-muted);
+        margin: 1rem 0;
+    }
+
+    // Links
+    a {
+        color: var(--accent-color);
+
+        &:hover {
+            color: var(--accent-color);
+            opacity: 0.8;
+        }
+    }
 }
 
 // Timestamp styling for technical content
 .post-meta {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  
-  &::before {
-    content: "📝 ";
-  }
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+
+    &::before {
+        content: "📝 ";
+    }
+}
+
+// Light mode syntax highlighting (Rouge/Pygments)
+.highlight {
+    color: #24292e;
+
+    .c,
+    .ch,
+    .cd,
+    .cm,
+    .cpf,
+    .c1,
+    .cs {
+        color: #6a737d;
+    } // Comments
+    .k,
+    .kc,
+    .kd,
+    .kn,
+    .kp,
+    .kr,
+    .kt,
+    .kv {
+        color: #d73a49;
+    } // Keywords
+    .s,
+    .sa,
+    .sb,
+    .sc,
+    .dl,
+    .sd,
+    .s2,
+    .se,
+    .sh,
+    .si,
+    .sx,
+    .sr,
+    .s1,
+    .ss {
+        color: #032f62;
+    } // Strings
+    .m,
+    .mb,
+    .mf,
+    .mh,
+    .mi,
+    .il,
+    .mo,
+    .mx {
+        color: #005cc5;
+    } // Numbers
+    .n,
+    .na,
+    .nb,
+    .nc,
+    .no,
+    .nd,
+    .ni,
+    .ne,
+    .nf,
+    .nl,
+    .nn,
+    .nx,
+    .py,
+    .nt,
+    .nv,
+    .vc,
+    .vg,
+    .vi,
+    .vm {
+        color: #24292e;
+    } // Names
+    .o,
+    .ow {
+        color: #d73a49;
+    } // Operators
+    .g,
+    .gd,
+    .ge,
+    .gr,
+    .gh,
+    .gi,
+    .go,
+    .gp,
+    .gs,
+    .gu,
+    .gt {
+        color: #24292e;
+    } // Generic
+    .bp {
+        color: #005cc5;
+    } // Built-ins
+    .err {
+        color: #cb2431;
+        background-color: transparent;
+    } // Errors
 }
 
 // Responsive improvements
 @media (max-width: 768px) {
-  .site-title {
-    font-size: 1.25rem !important;
-  }
-  
-  .page-link {
-    display: block;
-    padding: 0.5rem 0;
-  }
-  
-  .theme-toggle {
-    margin-left: 0;
-    margin-top: 0.5rem;
-    width: 100%;
-    text-align: center;
-  }
+    .site-title {
+        font-size: 1.25rem !important;
+    }
+
+    .page-link {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .theme-toggle {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 // Smooth transitions for all themed elements
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 // Prevent transition on page load
 .no-transition * {
-  transition: none !important;
+    transition: none !important;
 }
 
 // Ensure proper contrast for form elements
-input, textarea, select {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  border-color: var(--border-color);
-  
-  &:focus {
-    border-color: var(--accent-color);
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
-  }
+input,
+textarea,
+select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+
+    &:focus {
+        border-color: var(--accent-color);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+    }
 }
 
 // Dark mode specific adjustments
 [data-theme="dark"] {
-  // Ensure images don't become too bright
-  img {
-    opacity: 0.9;
-  }
-  
-  // Adjust selection colors
-  ::selection {
-    background-color: rgba(88, 166, 255, 0.3);
-    color: var(--text-color);
-  }
-  
-  // Override minima theme defaults for dark mode
-  .site-header {
-    background-color: var(--bg-color) !important;
-    border-bottom-color: var(--border-color) !important;
-  }
-  
-  .site-footer {
-    background-color: var(--bg-secondary) !important;
-    border-top-color: var(--border-color) !important;
-  }
-  
-  .page-content {
-    background-color: var(--bg-color) !important;
-  }
-  
-  // Ensure all text elements use our color variables
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color) !important;
-  }
-  
-  p, span, div, li, td, th {
-    color: var(--text-color) !important;
-  }
-  
-  // Navigation links
-  .site-nav .page-link {
-    color: var(--text-secondary) !important;
-    
-    &:hover {
-      color: var(--accent-color) !important;
+    // Ensure images don't become too bright
+    img {
+        opacity: 0.9;
     }
-  }
-  
-  // Site title
-  .site-title {
-    color: var(--text-color) !important;
-    
-    &:visited {
-      color: var(--text-color) !important;
+
+    // Adjust selection colors
+    ::selection {
+        background-color: rgba(88, 166, 255, 0.3);
+        color: var(--text-color);
     }
-  }
+
+    // Syntax highlighting for dark mode (Rouge/Pygments)
+    .highlight {
+        color: #c9d1d9;
+
+        .c,
+        .ch,
+        .cd,
+        .cm,
+        .cpf,
+        .c1,
+        .cs {
+            color: #7d8590;
+        } // Comments
+        .k,
+        .kc,
+        .kd,
+        .kn,
+        .kp,
+        .kr,
+        .kt,
+        .kv {
+            color: #ff7b72;
+        } // Keywords
+        .s,
+        .sa,
+        .sb,
+        .sc,
+        .dl,
+        .sd,
+        .s2,
+        .se,
+        .sh,
+        .si,
+        .sx,
+        .sr,
+        .s1,
+        .ss {
+            color: #a5d6ff;
+        } // Strings
+        .m,
+        .mb,
+        .mf,
+        .mh,
+        .mi,
+        .il,
+        .mo,
+        .mx {
+            color: #79c0ff;
+        } // Numbers
+        .n,
+        .na,
+        .nb,
+        .nc,
+        .no,
+        .nd,
+        .ni,
+        .ne,
+        .nf,
+        .nl,
+        .nn,
+        .nx,
+        .py,
+        .nt,
+        .nv,
+        .vc,
+        .vg,
+        .vi,
+        .vm {
+            color: #c9d1d9;
+        } // Names
+        .o,
+        .ow {
+            color: #ff7b72;
+        } // Operators
+        .g,
+        .gd,
+        .ge,
+        .gr,
+        .gh,
+        .gi,
+        .go,
+        .gp,
+        .gs,
+        .gu,
+        .gt {
+            color: #c9d1d9;
+        } // Generic
+        .bp {
+            color: #79c0ff;
+        } // Built-ins
+        .err {
+            color: #f85149;
+            background-color: transparent;
+        } // Errors
+    }
+
+    // Override minima theme defaults for dark mode
+    .site-header {
+        background-color: var(--bg-color) !important;
+        border-bottom-color: var(--border-color) !important;
+    }
+
+    .site-footer {
+        background-color: var(--bg-color) !important;
+        border-top-color: var(--border-color) !important;
+    }
+
+    .page-content {
+        background-color: var(--bg-color) !important;
+    }
+
+    // Navigation links
+    .site-nav .page-link {
+        color: var(--text-secondary) !important;
+
+        &:hover {
+            color: var(--accent-color) !important;
+        }
+    }
+
+    // Site title
+    .site-title {
+        color: var(--text-color) !important;
+
+        &:visited {
+            color: var(--text-color) !important;
+        }
+    }
 }

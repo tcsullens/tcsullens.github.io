@@ -4,9 +4,7 @@ title: Resources
 permalink: /resources/
 ---
 
-# Technical Resources
-
-A curated collection of technical articles, blog posts, and resources that I've found valuable in my work as an infrastructure engineer.
+A curated collection of technical articles, blog posts, and resources that I've found valuable in my work or influenced my thinking as an engineer.
 
 ## Technical
 
@@ -42,6 +40,8 @@ A curated collection of technical articles, blog posts, and resources that I've 
 - [Think Fast, Talk Smart Podcast](https://www.gsb.stanford.edu/business-podcasts/think-fast-talk-smart) - Stanford GSB
 - [Founders Journal Podcast](https://foundersjournal.morningbrew.com/) - Morning Brew
 
----
 
-*These resources have shaped my understanding of building scalable systems, effective engineering practices, and leading technical teams. I regularly revisit them for both technical insights and leadership development.*
+## Misc / Non-Engineering
+
+- [Casual Viewing - Why Netflix looks like that](https://www.nplusonemag.com/issue-49/essays/casual-viewing/) - Will Tavlin; Netflix's pioneering of _ambient TV_ (and slop)
+- [Can History Predict the Future?](https://www.theatlantic.com/magazine/archive/2020/12/can-history-predict-future/616993/) - Nicolas Ortega, 2020; Decades of social and political trends, elite overproduction, etc culmninating in a tumultous decade.
