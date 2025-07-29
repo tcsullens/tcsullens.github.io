@@ -34,16 +34,18 @@
     --syntax-string: #a5d6ff;
     --syntax-number: #79c0ff;
     --syntax-error: #f85149;
-    
+
     // Typography system
-    --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+    --font-mono:
+        "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+        "Courier New", monospace;
     --font-size-xs: 10px;
     --font-size-sm: 12px;
     --font-size-base: 14px;
     --font-size-lg: 16px;
     --font-size-xl: 18px;
     --font-size-xxl: 20px;
-    
+
     // Spacing system
     --spacing-xs: 0.2rem;
     --spacing-sm: 0.5rem;
@@ -110,7 +112,7 @@ code {
     font-size: var(--font-size-base);
 
     &::before {
-        content: "./";
+        content: "../";
         color: var(--terminal-prompt);
         margin-right: var(--spacing-xs);
     }
@@ -331,7 +333,6 @@ code {
             }
         }
     }
-
 
     .current-line {
         margin-top: 1rem;
