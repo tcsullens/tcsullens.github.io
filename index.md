@@ -14,29 +14,24 @@ layout: fullscreen
   <div class="terminal-session">
     
     <div class="terminal-line">
-      <span class="prompt">tcsullens@portfolio:~$</span> <span class="command">cat readme.md</span>
+      <span class="prompt">tcsullens@portfolio:~$</span> <span class="command">mdcat readme.md</span>
     </div>
-    <div class="output">
-      <p># About Me<br>
+    <div class="output markdown-output">
+      <h1>About</h1>
+      
+      <p>Senior Platform Engineer @ <strong>Wrapbook</strong><br>
+      9+ years experience DevOps/Infra/Platform Engineering; based in Washington, DC</p>
+      
+      <p><a href="mailto:tcsullens@gmail.com">gmail</a> | <a href="https://github.com/tcsullens" target="_blank">github</a> | <a href="https://linkedin.com/in/tyler-sullens" target="_blank">linkedin</a></p>
+      
+      <h2>Experience</h2>
+      
+      <p>I've worked across a variety of organizations and technologies, primarily focused on building, managing, and scaling web applications.</p>
+      
+      <p>My experience ranges from managing physical servers to migrating and building on AWS and later Kubernetes, supporting developer tooling and infrastructure for large-scale engineering teams, evolving CI/CD systems from Jenkins+Bash to complex pipelines in multiple CI/CD platforms, and optimizing cost, performance and scalability of web applications.</p>
+
+      <p>Check out resume for more details on my experience and expertise; browse the rest of the site for bits of content I've scribbled down over the years.</p>
       <br>
-      Senior Platform Engineer @ Wrapbook<br>
-      9+ years experience DevOps/Infra/Platform Engineeering, based in Washington, DC<br>
-      <br>
-      [gmail](<a href="mailto:tcsullens@gmail.com">mailto:tcsullens@gmail.com</a>) | [github](<a href="https://github.com/tcsullens" target="_blank">https://github.com/tcsullens</a>) | [linkedin](<a href="https://linkedin.com/in/tyler-sullens" target="_blank">https://linkedin.com/in/tyler-sullens</a>)<br>
-      <br>
-      ## Experience<br>
-      <br>
-      I've worked across a variety of organizations and technologies, primarily focused on building, managing, and scaling web applications.<br>  
-      My experience ranges from managing physical servers to migrating and building on AWS and later Kubernetes, supporting developer tooling and infrastructure for large-scale engineering teams, evolving CI/CD systems from Jenkins+Bash to complex pipelines in multiple CI/CD platforms, and optimizing cost, performance and scalability of web applications.<br>
-      <br>
-      ## Tech<br>
-      Infrastructure: AWS, Kubernetes, Docker, Terraform, Networking, CDNs, CI/CD<br>
-      Data Platform: Redshift, Airflow, DBT, Looker<br>
-      Programming: Python, Go, Node.js, Ruby, Bash<br>
-      O11y: Prometheus, Grafana, DataDog, OpenTelemetry<br>
-      <br>
-      See my full [resume](./resume.md) for more details.<br>
-      </p>
     </div>
     
     <div class="terminal-line">
@@ -50,16 +45,16 @@ layout: fullscreen
         <span class="owner">tcsullens</span>
         <span class="group">staff</span>
         <span class="size">4096</span>
-        <span class="date">Nov 28 10:30</span>
+        <span class="date">Jul 28 21:02</span>
         <span class="name current">.</span>
       </div>
-      <div class="directory-item" data-url="/" data-type="file">
-        <span class="permissions">drw-r-xr-x</span>
+      <div class="directory-item" data-url="/" data-type="current">
+        <span class="permissions">-rw-r--r--</span>
         <span class="links">1</span>
         <span class="owner">tcsullens</span>
         <span class="group">staff</span>
-        <span class="size">3945</span>
-        <span class="date">Nov 28 10:30</span>
+        <span class="size">945</span>
+        <span class="date">Jul 28 21:03</span>
         <span class="name current">readme.md</span>
       </div>
       <div class="directory-item" data-url="/resume/" data-type="directory">
@@ -68,7 +63,7 @@ layout: fullscreen
         <span class="owner">tcsullens</span>
         <span class="group">staff</span>
         <span class="size">4096</span>
-        <span class="date">Nov 28 10:25</span>
+        <span class="date">Jul 28 21:08</span>
         <span class="name">resume/</span>
       </div>
       <div class="directory-item" data-url="/writing/" data-type="directory">
@@ -77,7 +72,7 @@ layout: fullscreen
         <span class="owner">tcsullens</span>
         <span class="group">staff</span>
         <span class="size">4096</span>
-        <span class="date">Nov 28 10:20</span>
+        <span class="date">Jul 28 21:19</span>
         <span class="name">writing/</span>
       </div>
       <div class="directory-item" data-url="/technical/" data-type="directory">
@@ -86,7 +81,7 @@ layout: fullscreen
         <span class="owner">tcsullens</span>
         <span class="group">staff</span>
         <span class="size">4096</span>
-        <span class="date">Nov 28 10:15</span>
+        <span class="date">Jul 28 21:19</span>
         <span class="name">technical/</span>
       </div>
       <div class="directory-item" data-url="/resources/" data-type="directory">
@@ -95,13 +90,13 @@ layout: fullscreen
         <span class="owner">tcsullens</span>
         <span class="group">staff</span>
         <span class="size">4096</span>
-        <span class="date">Nov 28 10:10</span>
+        <span class="date">Jul 28 21:19</span>
         <span class="name">resources/</span>
       </div>
     </div>
     
     <div class="terminal-line current-line">
-      <span class="prompt">tcsullens@portfolio:~$</span> <span class="cursor-line">_</span>
+      <span class="prompt">tcsullens@portfolio:~$</span> <span class="command-input">cd <span id="selected-directory">resume/</span></span><span class="cursor-line">_</span>
     </div>
     
     <div class="help-text">
@@ -114,13 +109,20 @@ layout: fullscreen
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const directoryItems = document.querySelectorAll('.directory-item[data-type="directory"]');
+  const selectedDirectorySpan = document.getElementById('selected-directory');
   let selectedIndex = 0;
   
-  // Add selection highlighting
+  // Add selection highlighting and update current directory display
   function updateSelection() {
     directoryItems.forEach((item, index) => {
       item.classList.toggle('selected', index === selectedIndex);
     });
+    
+    // Update the directory name in the current terminal line
+    if (directoryItems[selectedIndex]) {
+      const dirName = directoryItems[selectedIndex].querySelector('.name').textContent;
+      selectedDirectorySpan.textContent = dirName;
+    }
   }
   
   // Initialize selection

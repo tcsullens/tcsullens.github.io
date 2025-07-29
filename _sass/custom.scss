@@ -13,7 +13,6 @@
     --accent-color: #4fc1ff;
     --code-bg: #1e1e1e;
     --code-border: #333333;
-    --code-text: #d4d4d4;
 
     // Terminal-specific colors
     --terminal-prompt: #4ec9b0;
@@ -22,9 +21,19 @@
     --terminal-role: #ce9178;
     --terminal-highlight: #4fc1ff;
     --terminal-tech: #9cdcfe;
-    --terminal-green: #27ca3f;
-    --terminal-yellow: #ffbd2e;
-    --terminal-red: #ff5f56;
+
+    // Terminal button colors
+    --terminal-close: #ff5f56;
+    --terminal-minimize: #ffbd2e;
+    --terminal-maximize: #27ca3f;
+
+    // Syntax highlighting colors
+    --syntax-base: #c9d1d9;
+    --syntax-comment: #7d8590;
+    --syntax-keyword: #ff7b72;
+    --syntax-string: #a5d6ff;
+    --syntax-number: #79c0ff;
+    --syntax-error: #f85149;
 }
 
 // Terminal typography for entire site
@@ -47,7 +56,7 @@ body.fullscreen-terminal {
     padding: 0;
     height: 100vh;
     overflow: hidden;
-    background-color: #1e1e1e;
+    background-color: var(--bg-color);
 }
 
 // Code blocks styling
@@ -84,7 +93,7 @@ code {
 
 // Terminal-style navigation
 .page-link {
-    color: var(--terminal-tech) !important;
+    color: var(--terminal-tech);
     font-weight: 500;
     font-size: 14px;
 
@@ -95,12 +104,12 @@ code {
     }
 
     &:hover {
-        color: var(--terminal-highlight) !important;
+        color: var(--terminal-highlight);
         text-decoration: none;
     }
 
     &:visited {
-        color: var(--terminal-tech) !important;
+        color: var(--terminal-tech);
     }
 }
 
@@ -146,7 +155,7 @@ code {
 
 // Interactive terminal homepage styling
 .interactive-terminal {
-    background-color: #1e1e1e;
+    background-color: var(--bg-color);
     font-family:
         "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
         "Courier New", monospace;
@@ -158,9 +167,9 @@ code {
 }
 
 .terminal-header {
-    background-color: #2d2d2d;
+    background-color: var(--bg-secondary);
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     flex-shrink: 0;
@@ -177,18 +186,18 @@ code {
         border-radius: 50%;
 
         &.close {
-            background-color: #ff5f56;
+            background-color: var(--terminal-close);
         }
         &.minimize {
-            background-color: #ffbd2e;
+            background-color: var(--terminal-minimize);
         }
         &.maximize {
-            background-color: #27ca3f;
+            background-color: var(--terminal-maximize);
         }
     }
 
     .terminal-title {
-        color: #8e8e93;
+        color: var(--text-secondary);
         font-size: 12px;
         font-weight: 500;
     }
@@ -196,7 +205,7 @@ code {
 
 .terminal-session {
     padding: 1.5rem 2rem;
-    color: #d4d4d4;
+    color: var(--text-color);
     line-height: 1.4;
     font-size: 14px;
     flex: 1;
@@ -218,7 +227,7 @@ code {
 
     .output {
         margin: 0.2rem 0 0.8rem 0;
-        color: #d4d4d4;
+        color: var(--text-color);
 
         .role-info {
             .company {
@@ -240,7 +249,7 @@ code {
 
     .directory-listing {
         .listing-header {
-            color: #8e8e93;
+            color: var(--text-secondary);
             margin-bottom: 0.3rem;
         }
 
@@ -248,9 +257,10 @@ code {
             display: flex;
             font-family: inherit;
             cursor: pointer;
-            padding: 0.2rem 0.5rem;
+            padding: 0.1rem 0.5rem;
             border-radius: 3px;
             transition: background-color 0.2s ease;
+            line-height: 1.3;
 
             &:hover,
             &.selected {
@@ -265,39 +275,48 @@ code {
             }
 
             .permissions {
-                color: #8e8e93;
+                color: var(--text-secondary);
                 width: 6rem;
+                flex-shrink: 0;
             }
             .links {
-                color: #8e8e93;
-                width: 2rem;
+                color: var(--text-secondary);
+                width: 1.5rem;
                 text-align: right;
+                flex-shrink: 0;
+                margin-right: 1rem;
             }
             .owner {
-                color: #8e8e93;
-                width: 4rem;
+                color: var(--text-secondary);
+                width: 5rem;
+                flex-shrink: 0;
+                margin-right: 1rem;
             }
             .group {
-                color: #8e8e93;
-                width: 4rem;
+                color: var(--text-secondary);
+                width: 3rem;
+                flex-shrink: 0;
             }
             .size {
-                color: #8e8e93;
-                width: 4rem;
+                color: var(--text-secondary);
+                width: 3rem;
                 text-align: right;
+                flex-shrink: 0;
+                margin-right: 1rem;
             }
             .date {
-                color: #8e8e93;
+                color: var(--text-secondary);
                 width: 8rem;
-                margin-left: 0.5rem;
+                flex-shrink: 0;
+                margin-right: 1rem;
             }
             .name {
                 color: var(--terminal-tech);
-                margin-left: 0.5rem;
                 font-weight: 500;
+                flex-grow: 1;
 
                 &.current {
-                    color: #8e8e93;
+                    color: var(--text-secondary);
                 }
             }
         }
@@ -316,21 +335,120 @@ code {
 
     .current-line {
         margin-top: 1rem;
+
+        .command-input {
+            color: var(--terminal-command);
+            margin-left: 0.5rem;
+
+            #selected-directory {
+                color: var(--terminal-tech);
+                font-weight: 500;
+            }
+        }
+
+        .cursor-line {
+            margin-left: 0.2rem;
+        }
+    }
+
+    // Markdown-style output for homepage readme
+    .markdown-output {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--terminal-name);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+
+            &::before {
+                content: "# ";
+                color: var(--terminal-prompt);
+                margin-right: 0.5rem;
+            }
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.3rem;
+
+            &::before {
+                content: "## ";
+                color: var(--terminal-prompt);
+                margin-right: 0.5rem;
+            }
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--terminal-highlight);
+
+            &::before {
+                content: "### ";
+                color: var(--terminal-prompt);
+                margin-right: 0.5rem;
+            }
+        }
+
+        p {
+            color: var(--text-color);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        strong {
+            color: var(--terminal-role);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--terminal-highlight);
+            text-decoration: none;
+            font-weight: 500;
+
+            &:hover {
+                color: var(--terminal-tech);
+                opacity: 0.9;
+            }
+
+            &:visited {
+                color: var(--terminal-highlight);
+            }
+        }
     }
 
     .cursor {
-        background-color: #d4d4d4;
-        color: #1e1e1e;
+        background-color: var(--text-color);
+        color: var(--bg-color);
         animation: blink 1s infinite;
     }
 
     .help-text {
         margin-top: 1.5rem;
         padding-top: 1rem;
-        border-top: 1px solid #333;
+        border-top: 1px solid var(--border-color);
 
         .help-line {
-            color: #6a6a6a;
+            color: var(--text-muted);
             font-size: 12px;
             margin: 0.2rem 0;
         }
@@ -348,57 +466,36 @@ code {
     }
 }
 
-// Terminal-style page content
-.page-content {
+// Terminal-style content (shared by pages and posts)
+.page-content,
+.post-content {
+    // Heading styles with terminal prefixes
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        color: var(--terminal-name) !important;
-
-        &::before {
-            color: var(--terminal-prompt);
-            margin-right: 0.5rem;
-        }
+        color: var(--terminal-name);
     }
 
     h1 {
         font-size: 20px;
-        &::before {
-            content: "# ";
-        }
     }
     h2 {
         font-size: 18px;
-        &::before {
-            content: "## ";
-        }
     }
     h3 {
         font-size: 16px;
-        &::before {
-            content: "### ";
-        }
     }
     h4 {
         font-size: 15px;
-        &::before {
-            content: "#### ";
-        }
     }
     h5 {
         font-size: 14px;
-        &::before {
-            content: "##### ";
-        }
     }
     h6 {
         font-size: 14px;
-        &::before {
-            content: "###### ";
-        }
     }
 
     h2 {
@@ -408,11 +505,12 @@ code {
     }
 
     h3 {
-        color: var(--terminal-highlight) !important;
+        color: var(--terminal-highlight);
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
     }
 
+    // Text content
     p,
     li,
     td,
@@ -427,7 +525,7 @@ code {
         font-weight: 600;
     }
 
-    // Links in main content
+    // Links
     a {
         color: var(--terminal-highlight);
 
@@ -468,109 +566,81 @@ code {
         margin: 1rem 0;
         font-size: 14px;
     }
-}
 
-// Technical content enhancements
-.post-content {
-    h1 {
-        font-size: 20px;
-    }
-    h2 {
-        font-size: 18px;
-    }
-    h3 {
-        font-size: 16px;
-    }
-    h4 {
-        font-size: 15px;
-    }
-    h5 {
-        font-size: 14px;
-    }
-    h6 {
-        font-size: 14px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: var(--text-color);
-    }
-
-    h2 {
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 0.3rem;
-    }
-
-    p,
-    li,
-    td,
-    th {
-        font-size: 14px;
-    }
-
-    // Code block improvements
+    // Code blocks
     pre {
-        background-color: var(--code-bg) !important;
+        background-color: var(--code-bg);
         border: 1px solid var(--code-border);
         border-radius: 6px;
         padding: 1rem;
         overflow-x: auto;
-        color: var(--text-color) !important;
+        color: var(--text-color);
         font-size: 14px;
 
         code {
-            background-color: transparent !important;
+            background-color: transparent;
             border: none;
             padding: 0;
-            color: inherit !important;
+            color: inherit;
             font-size: 14px;
         }
     }
 
-    // Inline code styling
+    // Inline code
     code {
-        background-color: var(--code-bg) !important;
+        background-color: var(--code-bg);
         border-radius: 3px;
         padding: 0.2em 0.4em;
-        color: var(--text-color) !important;
+        color: var(--text-color);
         font-size: 14px;
     }
 
-    // Fenced code blocks (```language)
+    // Syntax highlighted code blocks
     .highlight {
-        background-color: var(--code-bg) !important;
+        background-color: var(--code-bg);
         border-radius: 6px;
         border: 1px solid var(--code-border);
 
         pre {
             margin: 0;
             border: none;
-            background-color: transparent !important;
+            background-color: transparent;
             font-size: 14px;
         }
     }
+}
 
-    // Blockquote styling
-    blockquote {
-        border-left: 4px solid var(--border-secondary);
-        padding-left: 1rem;
-        color: var(--text-muted);
-        margin: 1rem 0;
-        font-size: 14px;
+// Page-specific terminal prefixes
+.page-content {
+    h1::before {
+        content: "# ";
+        color: var(--terminal-prompt);
+        margin-right: 0.5rem;
     }
-
-    // Links
-    a {
-        color: var(--accent-color);
-
-        &:hover {
-            color: var(--accent-color);
-            opacity: 0.8;
-        }
+    h2::before {
+        content: "## ";
+        color: var(--terminal-prompt);
+        margin-right: 0.5rem;
+    }
+    h3::before {
+        content: "### ";
+        color: var(--terminal-prompt);
+        margin-right: 0.5rem;
+    }
+    h4::before {
+        content: "#### ";
+        color: var(--terminal-prompt);
+        margin-right: 0.5rem;
+    }
+    h5::before {
+        content: "##### ";
+        color: var(--terminal-prompt);
+        margin-right: 0.5rem;
+    }
+    h6::before {
+        content: "###### ";
+        color: var(--terminal-prompt);
+        margin-right: 0.5rem;
     }
 }
 
@@ -585,106 +655,10 @@ code {
     }
 }
 
-// Light mode syntax highlighting (Rouge/Pygments)
-.highlight {
-    color: #24292e;
-
-    .c,
-    .ch,
-    .cd,
-    .cm,
-    .cpf,
-    .c1,
-    .cs {
-        color: #6a737d;
-    } // Comments
-    .k,
-    .kc,
-    .kd,
-    .kn,
-    .kp,
-    .kr,
-    .kt,
-    .kv {
-        color: #d73a49;
-    } // Keywords
-    .s,
-    .sa,
-    .sb,
-    .sc,
-    .dl,
-    .sd,
-    .s2,
-    .se,
-    .sh,
-    .si,
-    .sx,
-    .sr,
-    .s1,
-    .ss {
-        color: #032f62;
-    } // Strings
-    .m,
-    .mb,
-    .mf,
-    .mh,
-    .mi,
-    .il,
-    .mo,
-    .mx {
-        color: #005cc5;
-    } // Numbers
-    .n,
-    .na,
-    .nb,
-    .nc,
-    .no,
-    .nd,
-    .ni,
-    .ne,
-    .nf,
-    .nl,
-    .nn,
-    .nx,
-    .py,
-    .nt,
-    .nv,
-    .vc,
-    .vg,
-    .vi,
-    .vm {
-        color: #24292e;
-    } // Names
-    .o,
-    .ow {
-        color: #d73a49;
-    } // Operators
-    .g,
-    .gd,
-    .ge,
-    .gr,
-    .gh,
-    .gi,
-    .go,
-    .gp,
-    .gs,
-    .gu,
-    .gt {
-        color: #24292e;
-    } // Generic
-    .bp {
-        color: #005cc5;
-    } // Built-ins
-    .err {
-        color: #cb2431;
-        background-color: transparent;
-    } // Errors
-}
-
 // Responsive improvements
 @media (max-width: 768px) {
     .site-title {
-        font-size: 12px !important;
+        font-size: 12px;
     }
 
     .page-link {
@@ -768,7 +742,7 @@ img {
 
 // Terminal syntax highlighting (Rouge/Pygments)
 .highlight {
-    color: #c9d1d9;
+    color: var(--syntax-base);
 
     .c,
     .ch,
@@ -777,7 +751,7 @@ img {
     .cpf,
     .c1,
     .cs {
-        color: #7d8590;
+        color: var(--syntax-comment);
     } // Comments
     .k,
     .kc,
@@ -787,7 +761,7 @@ img {
     .kr,
     .kt,
     .kv {
-        color: #ff7b72;
+        color: var(--syntax-keyword);
     } // Keywords
     .s,
     .sa,
@@ -803,7 +777,7 @@ img {
     .sr,
     .s1,
     .ss {
-        color: #a5d6ff;
+        color: var(--syntax-string);
     } // Strings
     .m,
     .mb,
@@ -813,7 +787,7 @@ img {
     .il,
     .mo,
     .mx {
-        color: #79c0ff;
+        color: var(--syntax-number);
     } // Numbers
     .n,
     .na,
@@ -834,11 +808,11 @@ img {
     .vg,
     .vi,
     .vm {
-        color: #c9d1d9;
+        color: var(--syntax-base);
     } // Names
     .o,
     .ow {
-        color: #ff7b72;
+        color: var(--syntax-keyword);
     } // Operators
     .g,
     .gd,
@@ -851,13 +825,13 @@ img {
     .gs,
     .gu,
     .gt {
-        color: #c9d1d9;
+        color: var(--syntax-base);
     } // Generic
     .bp {
-        color: #79c0ff;
+        color: var(--syntax-number);
     } // Built-ins
     .err {
-        color: #f85149;
+        color: var(--syntax-error);
         background-color: transparent;
     } // Errors
 }
