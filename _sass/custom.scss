@@ -34,14 +34,28 @@
     --syntax-string: #a5d6ff;
     --syntax-number: #79c0ff;
     --syntax-error: #f85149;
+    
+    // Typography system
+    --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-xxl: 20px;
+    
+    // Spacing system
+    --spacing-xs: 0.2rem;
+    --spacing-sm: 0.5rem;
+    --spacing-base: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
 }
 
 // Terminal typography for entire site
 body {
-    font-family:
-        "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
-        "Courier New", monospace;
-    font-size: 14px;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
     line-height: 1.5;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -62,10 +76,8 @@ body.fullscreen-terminal {
 // Code blocks styling
 pre,
 code {
-    font-family:
-        "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
-        "Courier New", monospace;
-    font-size: 14px;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
 }
 
 // Terminal-style header
@@ -76,7 +88,7 @@ code {
 
     .site-title {
         font-weight: 500;
-        font-size: 14px;
+        font-size: var(--font-size-base);
         color: var(--terminal-prompt);
 
         &::before {
@@ -95,12 +107,12 @@ code {
 .page-link {
     color: var(--terminal-tech);
     font-weight: 500;
-    font-size: 14px;
+    font-size: var(--font-size-base);
 
     &::before {
         content: "./";
         color: var(--terminal-prompt);
-        margin-right: 2px;
+        margin-right: var(--spacing-xs);
     }
 
     &:hover {
@@ -156,9 +168,7 @@ code {
 // Interactive terminal homepage styling
 .interactive-terminal {
     background-color: var(--bg-color);
-    font-family:
-        "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
-        "Courier New", monospace;
+    font-family: var(--font-mono);
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -322,16 +332,6 @@ code {
         }
     }
 
-    .skills-output {
-        .skill-category {
-            margin: 0.2rem 0;
-
-            .category {
-                color: var(--terminal-highlight);
-                font-weight: 600;
-            }
-        }
-    }
 
     .current-line {
         margin-top: 1rem;
@@ -369,18 +369,18 @@ code {
         }
 
         h1 {
-            font-size: 18px;
+            font-size: var(--font-size-xl);
             font-weight: 600;
 
             &::before {
                 content: "# ";
                 color: var(--terminal-prompt);
-                margin-right: 0.5rem;
+                margin-right: var(--spacing-sm);
             }
         }
 
         h2 {
-            font-size: 16px;
+            font-size: var(--font-size-lg);
             font-weight: 600;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.3rem;
@@ -388,7 +388,7 @@ code {
             &::before {
                 content: "## ";
                 color: var(--terminal-prompt);
-                margin-right: 0.5rem;
+                margin-right: var(--spacing-sm);
             }
         }
 
@@ -400,15 +400,15 @@ code {
             &::before {
                 content: "### ";
                 color: var(--terminal-prompt);
-                margin-right: 0.5rem;
+                margin-right: var(--spacing-sm);
             }
         }
 
         p {
             color: var(--text-color);
-            font-size: 14px;
+            font-size: var(--font-size-base);
             line-height: 1.5;
-            margin-bottom: 1rem;
+            margin-bottom: var(--spacing-base);
 
             &:last-child {
                 margin-bottom: 0;
@@ -480,22 +480,22 @@ code {
     }
 
     h1 {
-        font-size: 20px;
+        font-size: var(--font-size-xxl);
     }
     h2 {
-        font-size: 18px;
+        font-size: var(--font-size-xl);
     }
     h3 {
-        font-size: 16px;
+        font-size: var(--font-size-lg);
     }
     h4 {
         font-size: 15px;
     }
     h5 {
-        font-size: 14px;
+        font-size: var(--font-size-base);
     }
     h6 {
-        font-size: 14px;
+        font-size: var(--font-size-base);
     }
 
     h2 {
