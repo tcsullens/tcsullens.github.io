@@ -1,47 +1,53 @@
-// Custom styles for professional appearance with dark mode support
+// Custom styles for terminal theme appearance
 
-// CSS Custom Properties for theming
+// Terminal color scheme for the entire site
 :root {
-    // Light mode colors (default)
-    --bg-color: #ffffff;
-    --bg-secondary: #f6f8fa;
-    --text-color: #24292e;
-    --text-secondary: #586069;
-    --text-muted: #6a737d;
-    --border-color: #e1e4e8;
-    --border-secondary: #dfe2e5;
-    --accent-color: #0366d6;
-    --code-bg: #f6f8fa;
-    --code-border: #e1e4e8;
-    --code-text: rgba(27, 31, 35, 0.05);
+    // Terminal colors (fixed dark theme)
+    --bg-color: #1e1e1e;
+    --bg-secondary: #2d2d2d;
+    --text-color: #d4d4d4;
+    --text-secondary: #8e8e93;
+    --text-muted: #6a6a6a;
+    --border-color: #333333;
+    --border-secondary: #404040;
+    --accent-color: #4fc1ff;
+    --code-bg: #1e1e1e;
+    --code-border: #333333;
+    --code-text: #d4d4d4;
+
+    // Terminal-specific colors
+    --terminal-prompt: #4ec9b0;
+    --terminal-command: #569cd6;
+    --terminal-name: #dcdcaa;
+    --terminal-role: #ce9178;
+    --terminal-highlight: #4fc1ff;
+    --terminal-tech: #9cdcfe;
+    --terminal-green: #27ca3f;
+    --terminal-yellow: #ffbd2e;
+    --terminal-red: #ff5f56;
 }
 
-// Dark mode colors
-[data-theme="dark"] {
-    --bg-color: #0d1117;
-    --bg-secondary: #161b22;
-    --text-color: #c9d1d9;
-    --text-secondary: #8b949e;
-    --text-muted: #7d8590;
-    --border-color: #30363d;
-    --border-secondary: #21262d;
-    --accent-color: #58a6ff;
-    --code-bg: #29293d;
-    --code-border: #30363d;
-    --code-text: #eef0ff;
-}
-
-// Improved typography
+// Terminal typography for entire site
 body {
     font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-        sans-serif;
-    line-height: 1.6;
+        "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+        "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition:
         background-color 0.3s ease,
         color 0.3s ease;
+}
+
+// Fullscreen terminal layout
+body.fullscreen-terminal {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1e1e1e;
 }
 
 // Code blocks styling
@@ -50,39 +56,24 @@ code {
     font-family:
         "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
         "Courier New", monospace;
-}
-
-// Dark mode toggle button
-.theme-toggle {
-    background: none;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 8px 12px;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all 0.3s ease;
     font-size: 14px;
-    margin-left: 1rem;
-
-    &:hover {
-        background-color: var(--bg-secondary);
-        color: var(--text-color);
-    }
-
-    .theme-icon {
-        margin-right: 4px;
-    }
 }
 
-// Professional header styling
+// Terminal-style header
 .site-header {
     border-bottom: 1px solid var(--border-color);
-    background-color: var(--bg-color);
+    background-color: var(--bg-secondary);
+    padding: 0.75rem 0;
 
     .site-title {
-        font-weight: 600;
-        font-size: 1.5rem;
-        color: var(--text-color);
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--terminal-prompt);
+
+        &::before {
+            content: "$ ";
+            color: var(--terminal-command);
+        }
     }
 
     .site-nav {
@@ -91,18 +82,25 @@ code {
     }
 }
 
-// Improved navigation
+// Terminal-style navigation
 .page-link {
-    color: var(--text-secondary) !important;
+    color: var(--terminal-tech) !important;
     font-weight: 500;
+    font-size: 14px;
+
+    &::before {
+        content: "./";
+        color: var(--terminal-prompt);
+        margin-right: 2px;
+    }
 
     &:hover {
-        color: var(--accent-color) !important;
+        color: var(--terminal-highlight) !important;
         text-decoration: none;
     }
 
     &:visited {
-        color: var(--text-secondary) !important;
+        color: var(--terminal-tech) !important;
     }
 }
 
@@ -112,11 +110,11 @@ code {
     background-color: var(--bg-color);
 }
 
-// Minimal footer styling
+// Terminal-style footer
 .site-footer {
     border-top: 1px solid var(--border-color);
-    background-color: var(--bg-color);
-    padding: 1.5rem 0;
+    background-color: var(--bg-secondary);
+    padding: 1rem 0;
     margin-top: 2rem;
 
     .footer-content {
@@ -125,15 +123,16 @@ code {
         p {
             margin: 0;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 12px;
         }
 
         a {
-            color: var(--text-secondary);
+            color: var(--terminal-highlight);
             text-decoration: none;
 
             &:hover {
-                color: var(--accent-color);
+                color: var(--terminal-highlight);
+                opacity: 0.8;
                 text-decoration: none;
             }
         }
@@ -145,23 +144,211 @@ code {
     }
 }
 
-// Enhanced home page styling
-.home {
-    h1 {
-        border-bottom: 2px solid var(--accent-color);
-        padding-bottom: 0.5rem;
-        margin-bottom: 1.5rem;
-        color: var(--text-color);
+// Interactive terminal homepage styling
+.interactive-terminal {
+    background-color: #1e1e1e;
+    font-family:
+        "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+        "Courier New", monospace;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    .terminal-buttons {
+        display: flex;
+        gap: 0.5rem;
+        margin-right: 1rem;
     }
 
-    h2 {
-        color: var(--accent-color);
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+    .terminal-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+
+        &.close {
+            background-color: #ff5f56;
+        }
+        &.minimize {
+            background-color: #ffbd2e;
+        }
+        &.maximize {
+            background-color: #27ca3f;
+        }
+    }
+
+    .terminal-title {
+        color: #8e8e93;
+        font-size: 12px;
+        font-weight: 500;
     }
 }
 
-// General page styling for all content
+.terminal-session {
+    padding: 1.5rem 2rem;
+    color: #d4d4d4;
+    line-height: 1.4;
+    font-size: 14px;
+    flex: 1;
+    overflow-y: auto;
+
+    .terminal-line {
+        margin: 0.3rem 0;
+
+        .prompt {
+            color: var(--terminal-prompt);
+            font-weight: 500;
+        }
+
+        .command {
+            color: var(--terminal-command);
+            margin-left: 0.5rem;
+        }
+    }
+
+    .output {
+        margin: 0.2rem 0 0.8rem 0;
+        color: #d4d4d4;
+
+        .role-info {
+            .company {
+                color: var(--terminal-highlight);
+                font-weight: 600;
+            }
+            .position {
+                color: var(--terminal-role);
+            }
+            .location {
+                color: var(--terminal-tech);
+            }
+            .experience {
+                color: var(--terminal-highlight);
+                font-weight: 500;
+            }
+        }
+    }
+
+    .directory-listing {
+        .listing-header {
+            color: #8e8e93;
+            margin-bottom: 0.3rem;
+        }
+
+        .directory-item {
+            display: flex;
+            font-family: inherit;
+            cursor: pointer;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            transition: background-color 0.2s ease;
+
+            &:hover,
+            &.selected {
+                background-color: rgba(79, 193, 255, 0.2);
+            }
+
+            &[data-type="current"] {
+                cursor: default;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+
+            .permissions {
+                color: #8e8e93;
+                width: 6rem;
+            }
+            .links {
+                color: #8e8e93;
+                width: 2rem;
+                text-align: right;
+            }
+            .owner {
+                color: #8e8e93;
+                width: 4rem;
+            }
+            .group {
+                color: #8e8e93;
+                width: 4rem;
+            }
+            .size {
+                color: #8e8e93;
+                width: 4rem;
+                text-align: right;
+            }
+            .date {
+                color: #8e8e93;
+                width: 8rem;
+                margin-left: 0.5rem;
+            }
+            .name {
+                color: var(--terminal-tech);
+                margin-left: 0.5rem;
+                font-weight: 500;
+
+                &.current {
+                    color: #8e8e93;
+                }
+            }
+        }
+    }
+
+    .skills-output {
+        .skill-category {
+            margin: 0.2rem 0;
+
+            .category {
+                color: var(--terminal-highlight);
+                font-weight: 600;
+            }
+        }
+    }
+
+    .current-line {
+        margin-top: 1rem;
+    }
+
+    .cursor {
+        background-color: #d4d4d4;
+        color: #1e1e1e;
+        animation: blink 1s infinite;
+    }
+
+    .help-text {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid #333;
+
+        .help-line {
+            color: #6a6a6a;
+            font-size: 12px;
+            margin: 0.2rem 0;
+        }
+    }
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+// Terminal-style page content
 .page-content {
     h1,
     h2,
@@ -169,16 +356,59 @@ code {
     h4,
     h5,
     h6 {
-        color: var(--text-color) !important;
+        color: var(--terminal-name) !important;
+
+        &::before {
+            color: var(--terminal-prompt);
+            margin-right: 0.5rem;
+        }
+    }
+
+    h1 {
+        font-size: 20px;
+        &::before {
+            content: "# ";
+        }
+    }
+    h2 {
+        font-size: 18px;
+        &::before {
+            content: "## ";
+        }
+    }
+    h3 {
+        font-size: 16px;
+        &::before {
+            content: "### ";
+        }
+    }
+    h4 {
+        font-size: 15px;
+        &::before {
+            content: "#### ";
+        }
+    }
+    h5 {
+        font-size: 14px;
+        &::before {
+            content: "##### ";
+        }
+    }
+    h6 {
+        font-size: 14px;
+        &::before {
+            content: "###### ";
+        }
     }
 
     h2 {
         border-bottom: 1px solid var(--border-color);
         padding-bottom: 0.3rem;
+        margin-top: 2rem;
     }
 
     h3 {
-        color: var(--accent-color) !important;
+        color: var(--terminal-highlight) !important;
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
     }
@@ -188,40 +418,98 @@ code {
     td,
     th {
         color: var(--text-color);
+        font-size: 14px;
     }
 
     strong,
     b {
-        color: var(--text-color);
+        color: var(--terminal-role);
         font-weight: 600;
     }
 
     // Links in main content
     a {
-        color: var(--accent-color);
+        color: var(--terminal-highlight);
 
         &:hover {
-            color: var(--accent-color);
+            color: var(--terminal-highlight);
             opacity: 0.8;
         }
 
         &:visited {
-            color: var(--accent-color);
+            color: var(--terminal-highlight);
         }
+    }
+
+    // Lists with terminal-style bullets
+    ul {
+        list-style: none;
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 14px;
+
+            &::before {
+                content: "▸";
+                color: var(--terminal-prompt);
+                position: absolute;
+                left: 0;
+                font-weight: bold;
+            }
+        }
+    }
+
+    // Blockquotes
+    blockquote {
+        border-left: 4px solid var(--border-secondary);
+        padding-left: 1rem;
+        color: var(--text-muted);
+        margin: 1rem 0;
+        font-size: 14px;
     }
 }
 
 // Technical content enhancements
 .post-content {
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    h4 {
+        font-size: 15px;
+    }
+    h5 {
+        font-size: 14px;
+    }
+    h6 {
+        font-size: 14px;
+    }
+
     h1,
     h2,
-    h3 {
+    h3,
+    h4,
+    h5,
+    h6 {
         color: var(--text-color);
     }
 
     h2 {
         border-bottom: 1px solid var(--border-color);
         padding-bottom: 0.3rem;
+    }
+
+    p,
+    li,
+    td,
+    th {
+        font-size: 14px;
     }
 
     // Code block improvements
@@ -232,13 +520,14 @@ code {
         padding: 1rem;
         overflow-x: auto;
         color: var(--text-color) !important;
+        font-size: 14px;
 
         code {
             background-color: transparent !important;
             border: none;
             padding: 0;
             color: inherit !important;
-            font-size: 0.9em;
+            font-size: 14px;
         }
     }
 
@@ -248,7 +537,7 @@ code {
         border-radius: 3px;
         padding: 0.2em 0.4em;
         color: var(--text-color) !important;
-        font-size: 0.9em;
+        font-size: 14px;
     }
 
     // Fenced code blocks (```language)
@@ -261,6 +550,7 @@ code {
             margin: 0;
             border: none;
             background-color: transparent !important;
+            font-size: 14px;
         }
     }
 
@@ -270,6 +560,7 @@ code {
         padding-left: 1rem;
         color: var(--text-muted);
         margin: 1rem 0;
+        font-size: 14px;
     }
 
     // Links
@@ -286,7 +577,7 @@ code {
 // Timestamp styling for technical content
 .post-meta {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 12px;
     margin-bottom: 1rem;
 
     &::before {
@@ -393,19 +684,45 @@ code {
 // Responsive improvements
 @media (max-width: 768px) {
     .site-title {
-        font-size: 1.25rem !important;
+        font-size: 12px !important;
     }
 
     .page-link {
         display: block;
         padding: 0.5rem 0;
+        font-size: 12px;
     }
 
-    .theme-toggle {
-        margin-left: 0;
-        margin-top: 0.5rem;
-        width: 100%;
-        text-align: center;
+    .interactive-terminal {
+        .terminal-session {
+            padding: 1rem;
+            font-size: 12px;
+
+            .directory-item {
+                .permissions {
+                    width: 4rem;
+                }
+                .links {
+                    width: 1rem;
+                }
+                .owner {
+                    width: 2.5rem;
+                }
+                .group {
+                    width: 2.5rem;
+                }
+                .size {
+                    width: 2.5rem;
+                }
+                .date {
+                    width: 6rem;
+                }
+            }
+        }
+    }
+
+    .terminal-header .terminal-title {
+        font-size: 10px;
     }
 }
 
@@ -437,145 +754,110 @@ select {
     }
 }
 
-// Dark mode specific adjustments
-[data-theme="dark"] {
-    // Ensure images don't become too bright
-    img {
-        opacity: 0.9;
-    }
+// Terminal-specific adjustments
+// Ensure images don't become too bright in terminal theme
+img {
+    opacity: 0.9;
+}
 
-    // Adjust selection colors
-    ::selection {
-        background-color: rgba(88, 166, 255, 0.3);
-        color: var(--text-color);
-    }
+// Terminal selection colors
+::selection {
+    background-color: rgba(79, 193, 255, 0.3);
+    color: var(--text-color);
+}
 
-    // Syntax highlighting for dark mode (Rouge/Pygments)
-    .highlight {
+// Terminal syntax highlighting (Rouge/Pygments)
+.highlight {
+    color: #c9d1d9;
+
+    .c,
+    .ch,
+    .cd,
+    .cm,
+    .cpf,
+    .c1,
+    .cs {
+        color: #7d8590;
+    } // Comments
+    .k,
+    .kc,
+    .kd,
+    .kn,
+    .kp,
+    .kr,
+    .kt,
+    .kv {
+        color: #ff7b72;
+    } // Keywords
+    .s,
+    .sa,
+    .sb,
+    .sc,
+    .dl,
+    .sd,
+    .s2,
+    .se,
+    .sh,
+    .si,
+    .sx,
+    .sr,
+    .s1,
+    .ss {
+        color: #a5d6ff;
+    } // Strings
+    .m,
+    .mb,
+    .mf,
+    .mh,
+    .mi,
+    .il,
+    .mo,
+    .mx {
+        color: #79c0ff;
+    } // Numbers
+    .n,
+    .na,
+    .nb,
+    .nc,
+    .no,
+    .nd,
+    .ni,
+    .ne,
+    .nf,
+    .nl,
+    .nn,
+    .nx,
+    .py,
+    .nt,
+    .nv,
+    .vc,
+    .vg,
+    .vi,
+    .vm {
         color: #c9d1d9;
-
-        .c,
-        .ch,
-        .cd,
-        .cm,
-        .cpf,
-        .c1,
-        .cs {
-            color: #7d8590;
-        } // Comments
-        .k,
-        .kc,
-        .kd,
-        .kn,
-        .kp,
-        .kr,
-        .kt,
-        .kv {
-            color: #ff7b72;
-        } // Keywords
-        .s,
-        .sa,
-        .sb,
-        .sc,
-        .dl,
-        .sd,
-        .s2,
-        .se,
-        .sh,
-        .si,
-        .sx,
-        .sr,
-        .s1,
-        .ss {
-            color: #a5d6ff;
-        } // Strings
-        .m,
-        .mb,
-        .mf,
-        .mh,
-        .mi,
-        .il,
-        .mo,
-        .mx {
-            color: #79c0ff;
-        } // Numbers
-        .n,
-        .na,
-        .nb,
-        .nc,
-        .no,
-        .nd,
-        .ni,
-        .ne,
-        .nf,
-        .nl,
-        .nn,
-        .nx,
-        .py,
-        .nt,
-        .nv,
-        .vc,
-        .vg,
-        .vi,
-        .vm {
-            color: #c9d1d9;
-        } // Names
-        .o,
-        .ow {
-            color: #ff7b72;
-        } // Operators
-        .g,
-        .gd,
-        .ge,
-        .gr,
-        .gh,
-        .gi,
-        .go,
-        .gp,
-        .gs,
-        .gu,
-        .gt {
-            color: #c9d1d9;
-        } // Generic
-        .bp {
-            color: #79c0ff;
-        } // Built-ins
-        .err {
-            color: #f85149;
-            background-color: transparent;
-        } // Errors
-    }
-
-    // Override minima theme defaults for dark mode
-    .site-header {
-        background-color: var(--bg-color) !important;
-        border-bottom-color: var(--border-color) !important;
-    }
-
-    .site-footer {
-        background-color: var(--bg-color) !important;
-        border-top-color: var(--border-color) !important;
-    }
-
-    .page-content {
-        background-color: var(--bg-color) !important;
-    }
-
-    // Navigation links
-    .site-nav .page-link {
-        color: var(--text-secondary) !important;
-
-        &:hover {
-            color: var(--accent-color) !important;
-        }
-    }
-
-    // Site title
-    .site-title {
-        color: var(--text-color) !important;
-
-        &:visited {
-            color: var(--text-color) !important;
-        }
-    }
+    } // Names
+    .o,
+    .ow {
+        color: #ff7b72;
+    } // Operators
+    .g,
+    .gd,
+    .ge,
+    .gr,
+    .gh,
+    .gi,
+    .go,
+    .gp,
+    .gs,
+    .gu,
+    .gt {
+        color: #c9d1d9;
+    } // Generic
+    .bp {
+        color: #79c0ff;
+    } // Built-ins
+    .err {
+        color: #f85149;
+        background-color: transparent;
+    } // Errors
 }

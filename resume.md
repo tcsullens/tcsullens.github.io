@@ -5,11 +5,9 @@ permalink: /resume/
 ---
 
 **Senior Infra/DevOps/Platform Engineer**  
-[pdf](/assets/tyler-sullens-resume.pdf) | [gmail](mailto:tcsullens@gmail.com) | [github](https://github.com/tcsullens) | [linkedin](https://linkedin.com/in/tyler-sullens)
+→ [pdf](/assets/tyler-sullens-resume.pdf) | [gmail](mailto:tcsullens@gmail.com) | [github](https://github.com/tcsullens) | [linkedin](https://linkedin.com/in/tyler-sullens)
 
----
-
-### Skills
+## Skills
 
 **Programming:** Python, Go, Node.js, Ruby, Bash  
 **DevOps/Platform:** AWS, Docker, Kubernetes, Helm, ArgoCD, ECS, Terraform, Vault, CircleCI, GitHub Actions, Buildkite, Cloudflare, Akamai  
@@ -19,11 +17,12 @@ permalink: /resume/
 
 ---
 
-### Experience
+## Experience
 
 #### Senior Platform Engineer, *Wrapbook* (Current)
 
 Managing and scaling a Rails SaaS, focusing on developer experience, CI/CD scaling and performance, any everything else infra/sre.
+
 
 #### Senior Infrastructure Engineer II, *Axios* (Jan 2022 – Aug 2024)
 
@@ -66,6 +65,6 @@ Managing and scaling a Rails SaaS, focusing on developer experience, CI/CD scali
 
 ---
 
-### Education
+## Education
 
 **West Virginia University**, BSc in Computer Science, 2012
