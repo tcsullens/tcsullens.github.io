@@ -17,7 +17,7 @@ plugins:
 
 header_pages:
   - resume.md
-  - writing/index.md
+  - notes/index.md
   - technical/index.md
   - resources.md
 
@@ -27,7 +27,7 @@ minima:
     linkedin: tyler-sullens
 
 collections:
-  writing:
+  notes:
     output: true
     permalink: /:collection/:name/
   technical:
@@ -42,7 +42,7 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "writing"
+      type: "notes"
     values:
       layout: "post"
   - scope:

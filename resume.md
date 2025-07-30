@@ -29,7 +29,7 @@ Managing and scaling a Rails-based production finance platform, focusing on deve
 - Integrated ECR Credential Helper to GitHub Actions self-hosted runners to eliminate pipeline re-run failures and improve developer experience.
 
 
-#### Senior Infrastructure Engineer II, *Axios* (Jan 2022 – Aug 2024)
+#### Senior Infrastructure Engineer II / Tech Lead, *Axios* (Jan 2022 – Aug 2024)
 
 - Managed infrastructure and tooling for NextJs/Django/Go application services powering the Axios website and internal Content Management System.
 - Led technical strategy and cross-functional collaboration for adoption of Cloud-Native security platform (Orca), Data Observability platform (MonteCarlo), and migration to GitHub Actions.

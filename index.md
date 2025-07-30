@@ -66,14 +66,14 @@ layout: fullscreen
         <span class="date">Jul 28 21:08</span>
         <span class="name">resume/</span>
       </div>
-      <div class="directory-item" data-url="/writing/" data-type="directory">
+      <div class="directory-item" data-url="/notes/" data-type="directory">
         <span class="permissions">drwxr-xr-x</span>
         <span class="links">3</span>
         <span class="owner">tcsullens</span>
         <span class="group">staff</span>
         <span class="size">4096</span>
         <span class="date">Jul 28 21:19</span>
-        <span class="name">writing/</span>
+        <span class="name">notes/</span>
       </div>
       <div class="directory-item" data-url="/technical/" data-type="directory">
         <span class="permissions">drwxr-xr-x</span>
