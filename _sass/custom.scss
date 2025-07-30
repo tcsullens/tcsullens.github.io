@@ -11,8 +11,6 @@
     --border-color: #333333;
     --border-secondary: #404040;
     --accent-color: #4fc1ff;
-    --code-bg: #1e1e1e;
-    --code-border: #333333;
 
     // Terminal-specific colors
     --terminal-prompt: #4ec9b0;
@@ -34,15 +32,11 @@
     --syntax-string: #7ee787;
     --syntax-number: #a5d6ff;
     --syntax-function: #d2a8ff;
-    --syntax-variable: #ffa657;
-    --syntax-operator: #ff7b72;
     --syntax-error: #f85149;
 
     // Typography system
     --font-main: Verdana, Geneva, sans-serif;
-    --font-mono:
-        "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
-        "Courier New", monospace;
+    --font-mono: var(--font-main);
     --font-size-xs: 10px;
     --font-size-sm: 12px;
     --font-size-base: 14px;
@@ -489,9 +483,14 @@ code {
     }
     h2 {
         font-size: var(--font-size-xl);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.3rem;
+        margin-top: 2rem;
     }
     h3 {
         font-size: var(--font-size-lg);
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
     }
     h4 {
         font-size: 15px;
@@ -501,18 +500,6 @@ code {
     }
     h6 {
         font-size: var(--font-size-base);
-    }
-
-    h2 {
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 0.3rem;
-        margin-top: 2rem;
-    }
-
-    h3 {
-        color: var(--terminal-name);
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
     }
 
     // Text content
