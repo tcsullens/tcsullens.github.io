@@ -10,8 +10,6 @@
     --text-muted: #6a6a6a;
     --border-color: #333333;
     --border-secondary: #404040;
-    --accent-color: #4fc1ff;
-
     // Terminal-specific colors
     --terminal-prompt: #4ec9b0;
     --terminal-command: #569cd6;
@@ -217,7 +215,7 @@ code {
     padding: 1.5rem 2rem;
     color: var(--text-color);
     line-height: 1.4;
-    font-size: 14px;
+    font-size: var(--font-size-base);
     flex: 1;
     overflow-y: auto;
 
@@ -508,7 +506,7 @@ code {
     td,
     th {
         color: var(--text-color);
-        font-size: 14px;
+        font-size: var(--font-size-base);
     }
 
     strong,
@@ -538,7 +536,7 @@ code {
         li {
             position: relative;
             padding-left: 1.5rem;
-            font-size: 14px;
+            font-size: var(--font-size-base);
 
             &::before {
                 content: "▸";
@@ -555,8 +553,8 @@ code {
         border-left: 4px solid var(--border-secondary);
         padding-left: 1rem;
         color: var(--text-muted);
-        margin: 1rem 0;
-        font-size: 14px;
+        margin: var(--spacing-base) 0;
+        font-size: var(--font-size-base);
     }
 
     // Code blocks with enhanced styling
@@ -620,32 +618,32 @@ code {
     h1::before {
         content: "# ";
         color: var(--terminal-prompt);
-        margin-right: 0.5rem;
+        margin-right: var(--spacing-sm);
     }
     h2::before {
         content: "## ";
         color: var(--terminal-prompt);
-        margin-right: 0.5rem;
+        margin-right: var(--spacing-sm);
     }
     h3::before {
         content: "### ";
         color: var(--terminal-prompt);
-        margin-right: 0.5rem;
+        margin-right: var(--spacing-sm);
     }
     h4::before {
         content: "#### ";
         color: var(--terminal-prompt);
-        margin-right: 0.5rem;
+        margin-right: var(--spacing-sm);
     }
     h5::before {
         content: "##### ";
         color: var(--terminal-prompt);
-        margin-right: 0.5rem;
+        margin-right: var(--spacing-sm);
     }
     h6::before {
         content: "###### ";
         color: var(--terminal-prompt);
-        margin-right: 0.5rem;
+        margin-right: var(--spacing-sm);
     }
 }
 
@@ -727,7 +725,7 @@ select {
     border-color: var(--border-color);
 
     &:focus {
-        border-color: var(--accent-color);
+        border-color: var(--terminal-highlight);
         outline: none;
         box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
     }

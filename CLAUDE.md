@@ -4,15 +4,15 @@ This file provides context and preferences for AI assistants working on this Jek
 
 ## Project Overview
 
-Jekyll site for Tyler Sullens showcasing technical expertise, engineering leadership insights, and curated resources. Built for GitHub Pages deployment with modern features including dark mode support.
+Jekyll site for Tyler Sullens showcasing technical expertise, engineering leadership insights, and curated resources. Built for GitHub Pages deployment with terminal-inspired theme and interactive homepage.
 
 ## Technology Stack
 
 - **Jekyll 4.3+** - Static site generator
 - **Ruby 3.2** - Managed by mise
-- **Minima theme** - Base theme with extensive customizations
-- **Sass/SCSS** - For styling with CSS custom properties
-- **JavaScript** - Vanilla JS for dark mode functionality
+- **Minima theme** - Base theme with extensive terminal-style customizations
+- **Sass/SCSS** - For styling with CSS custom properties and terminal color scheme
+- **JavaScript** - Vanilla JS for interactive terminal homepage navigation
 - **GitHub Pages** - Deployment platform
 
 ## Site Structure
@@ -21,20 +21,22 @@ Jekyll site for Tyler Sullens showcasing technical expertise, engineering leader
 ├── _config.yml           # Jekyll configuration
 ├── _layouts/
 │   ├── default.html      # Base layout with header/footer
-│   ├── home.html         # Homepage layout
+│   ├── fullscreen.html   # Fullscreen terminal layout for homepage
 │   ├── page.html         # Static page layout
 │   └── post.html         # Blog post layout
 ├── _includes/
-│   └── header.html       # Custom header with dark mode toggle
+│   ├── head.html         # HTML head with SEO and stylesheet links
+│   ├── header.html       # Custom header with terminal-style navigation
+│   └── footer.html       # Site footer
 ├── _sass/
 │   └── custom.scss       # Custom SCSS styling with dark mode
-├── _writing/             # Blog posts about leadership & communication
+├── _notes/               # Blog posts about leadership & communication
 ├── _technical/           # Technical documentation and guides
 ├── assets/
 │   ├── js/
-│   │   └── theme-toggle.js  # Dark mode functionality
+│   └── js/               # JavaScript assets (if any)
 │   └── main.scss         # Main stylesheet
-├── writing/              # Writing section index
+├── notes/                # Notes section index with dynamic post listing
 ├── technical/            # Technical section index
 ├── index.md              # Homepage
 ├── resume.md             # Resume page
@@ -46,9 +48,9 @@ Jekyll site for Tyler Sullens showcasing technical expertise, engineering leader
 
 ### Code Style
 - **No comments** in code unless specifically requested
-- **Professional, minimal aesthetic** - GitHub-inspired design
-- **Responsive design** - Mobile-first approach
-- **Accessibility** - Proper ARIA labels, semantic HTML
+- **Terminal aesthetic** - Dark theme with terminal-inspired styling
+- **Responsive design** - Mobile-first approach with terminal adaptations
+- **Accessibility** - Proper ARIA labels, semantic HTML, keyboard navigation
 - **Performance** - Optimized loading, minimal JavaScript
 
 ### Content Guidelines
@@ -57,12 +59,12 @@ Jekyll site for Tyler Sullens showcasing technical expertise, engineering leader
 - **Professional tone** - Suitable for potential employers and collaborators
 - **Concise writing** - Clear, direct communication
 
-### Dark Mode Implementation
-- Uses CSS custom properties for theming
-- Respects system preference by default
-- Saves user preference to localStorage
-- Smooth transitions (0.3s ease)
-- GitHub-inspired color scheme
+### Terminal Theme Implementation
+- Fixed dark terminal theme (no light mode toggle)
+- Uses CSS custom properties for consistent theming
+- Terminal-style colors and typography (Verdana font)
+- Interactive homepage with keyboard navigation
+- Smooth transitions (0.3s ease) for UI elements
 
 ## Common Commands
 
@@ -80,9 +82,10 @@ bundle exec jekyll serve --host 0.0.0.0  # Test on network
 
 ## Content Organization
 
-### Writing Section
+### Notes Section
 - **Leadership** - Engineering team management philosophy
 - **Communication** - Technical team communication practices
+- **Dynamic listing** - Automatically generates post index from _notes collection
 
 ### Technical Section  
 - **Git** - Comprehensive workflows and commands with real examples
@@ -97,22 +100,23 @@ bundle exec jekyll serve --host 0.0.0.0  # Test on network
 ## Styling Notes
 
 ### CSS Architecture
-- CSS custom properties for theming (`--bg-color`, `--text-color`, etc.)
-- Mobile-first responsive design
-- `!important` declarations used sparingly, mainly for theme overrides
+- CSS custom properties for terminal theming (`--bg-color`, `--text-color`, `--terminal-*`, etc.)
+- Comprehensive variable system for typography and spacing
+- Mobile-first responsive design with terminal adaptations
+- Consolidated CSS with eliminated duplications
 - Smooth transitions for better UX
 
-### Color Scheme
+### Terminal Color Scheme
 ```scss
-// Light mode
---bg-color: #ffffff
---text-color: #24292e  
---accent-color: #0366d6
-
-// Dark mode  
---bg-color: #0d1117
---text-color: #c9d1d9
---accent-color: #58a6ff
+// Terminal theme (fixed dark)
+--bg-color: #1e1e1e
+--bg-secondary: #2d2d2d
+--text-color: #d4d4d4
+--text-secondary: #8e8e93
+--terminal-prompt: #4ec9b0
+--terminal-command: #569cd6
+--terminal-name: #ffbc4b
+--terminal-highlight: #4fc1ff
 ```
 
 ## Deployment
@@ -136,8 +140,9 @@ bundle exec jekyll serve --host 0.0.0.0  # Test on network
 
 ## Quality Standards
 
-- All pages should render correctly in both light and dark modes
-- Mobile responsiveness is essential
+- All pages should render correctly with terminal theme
+- Interactive homepage should support both keyboard and mouse navigation
+- Mobile responsiveness is essential with adapted terminal styling
 - Fast loading times - minimize external dependencies
 - Clean, semantic HTML structure
 - Professional appearance suitable for career purposes
@@ -155,8 +160,9 @@ When working on this project:
 ## Known Issues & Considerations
 
 - Sass deprecation warnings from minima theme (cosmetic, doesn't affect functionality)
-- Dark mode requires JavaScript enabled (graceful degradation to light mode)
+- Interactive homepage requires JavaScript enabled for keyboard navigation
 - GitHub Pages has limited plugin support (stick to supported gems)
+- Terminal theme is fixed dark - no light mode available
 
 ---
 
