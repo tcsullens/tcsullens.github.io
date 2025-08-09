@@ -10,9 +10,9 @@ permalink: /resume/
 ## Skills
 
 **Programming:** Python, Go, Node.js, Ruby, Bash  
-**DevOps/Platform:** AWS, Docker, Kubernetes, Helm, ArgoCD, ECS, Terraform/Terragrunt, Vault, CircleCI, GitHub Actions, Buildkite, Cloudflare, Akamai  
-**Databases & Search:** PostgreSQL, MySQL, Elasticsearch/OpenSearch, DynamoDB, Redis/Valkey, RabbitMQ, SQS   
-**Monitoring & Observability**: Prometheus, Grafana, DataDog, New Relic, OpenTelemetry, eBPF   
+**DevOps/Platform:** AWS, GCP, Docker, Kubernetes, Helm, ArgoCD, ECS, Terraform/Terragrunt, Vault, CircleCI, GitHub Actions, Buildkite, Cloudflare, Akamai  
+**Databases & Search:** PostgreSQL, MySQL, Elasticsearch/OpenSearch, DynamoDB, Redis/Valkey, RabbitMQ, SQS  
+**Monitoring & Observability**: Prometheus, Grafana, DataDog, New Relic, Honeycomb, Sentry, OpenTelemetry, eBPF  
 **Data:** Redshift, Airflow, DBT, Looker, Glue, Debezium, Kafka  
 
 ---
@@ -23,10 +23,9 @@ permalink: /resume/
 
 Managing and scaling a Rails-based production finance platform, focusing on developer experience, infrastructure management, high volume CI/CD pipelines, and application uptime/stability.
 - Completed refactor of application configuration to use the standard Rails environment configuration instead of custom implementation.
-- Evaluated state of developer tooling management and recommended improvements.
-- Identified oversized/under-utilized AWS resources and implemented recommended changes to right-size for use/cost.
-- Evaluated alternative CI/CD platforms based on organizational requirements and facilitated migration from GitHub Actions to Buildkite for CI pipelines.
+- Maintained large-scale self-hosted CI infrastructure (GitHub Actions).
 - Integrated ECR Credential Helper to GitHub Actions self-hosted runners to eliminate pipeline re-run failures and improve developer experience.
+- Participated in high-impact CI platform migration project, conducting technical evaluation of alternative platforms and leading the design and deployment of Buildkite self-hosted infrastructure.
 
 
 #### Senior Infrastructure Engineer II / Tech Lead, *Axios* (Jan 2022 – Aug 2024)
@@ -44,8 +43,8 @@ Managing and scaling a Rails-based production finance platform, focusing on deve
 
 - Migrated CoStar's flagship service to Kubernetes blue/green deployment using Argo Rollouts, ensuring zero-downtime releases for production workloads.
 - Dockerized and deployed .NET applications using Azure Pipelines and Helm, improving deployment consistency and reliability.
-- Upgraded Kubernetes clusters without downtime by building Azure DevOps Pipelines and Terraform infrastructure-as-code resources.
-- Identified and led optimizations of internal Azure DevOps Pipelines, reducing toil.
+- Upgraded Kubernetes clusters without downtime through custom Azure DevOps Pipelines and Terraform infrastructure-as-code resources.
+- Wrote and maintained custom Azure Pipelines Tasks (Typescript), and optimized existing pipelines.
 - Mentored junior team members on DevOps practices and operational excellence, fostering alignment with organizational goals.
 
 
@@ -72,9 +71,10 @@ Managing and scaling a Rails-based production finance platform, focusing on deve
 - Led transformation of traditional operations team to agile DevOps team, expanding team personnel, capabilities and organizational impact.
 - Reduced server deployment times through custom Debian package development and Chef cookbook optimization.
 - Built internal infrastructure dashboard (Golang + React) for Chef server management, improving operational visibility.
+- Designed and implemented replication-aware load-balancing for MySQL clusters with HAProxy.
 - Pioneered infrastructure expansion into AWS, establishing standards best practices for highly-available application deployments.
 - Architected and implemented multi-region AWS service architecture with automated failover capabilities, proven effective in production incidents.
-- Mentored team members through migration from legacy deployment processes to modern containerized workflows.
+- Evolved legacy, “one-shot” deployment process to failure-aware rolling deployments.
 - Developed initial Kubernetes environment, enabling the organization's first container-based service deployments.
 
 
