@@ -10,7 +10,7 @@ permalink: /resume/
 ## Skills
 
 **Programming:** Python, Go, Node.js, Ruby, Bash  
-**DevOps/Platform:** AWS, GCP, Docker, Kubernetes, Helm, ArgoCD, ECS, Terraform/Terragrunt, Vault, CircleCI, GitHub Actions, Buildkite, Cloudflare, Akamai  
+**DevOps/Platform:** AWS, GCP, Docker, Kubernetes, Helm, ArgoCD, ECS, Terraform/Terragrunt, Ansible, Vault, Jenkins, CircleCI, GitHub Actions, Buildkite, Cloudflare, Akamai  
 **Databases & Search:** PostgreSQL, MySQL, Elasticsearch/OpenSearch, DynamoDB, Redis/Valkey, RabbitMQ, SQS  
 **Monitoring & Observability**: Prometheus, Grafana, DataDog, New Relic, Honeycomb, Sentry, OpenTelemetry, eBPF  
 **Data:** Redshift, Airflow, DBT, Looker, Glue, Debezium, Kafka  
@@ -21,7 +21,7 @@ permalink: /resume/
 
 #### Senior Platform Engineer, *Wrapbook* (Current)
 
-Managing and scaling a Rails-based production finance platform, focusing on developer experience, infrastructure management, high volume CI/CD pipelines, and application uptime/stability.
+- Managing and scaling a Rails-based production finance platform, focusing on developer experience, infrastructure management, high volume CI/CD pipelines, and application uptime/stability.
 - Completed refactor of application configuration to use the standard Rails environment configuration instead of custom implementation.
 - Maintained large-scale self-hosted CI infrastructure (GitHub Actions).
 - Integrated ECR Credential Helper to GitHub Actions self-hosted runners to eliminate pipeline re-run failures and improve developer experience.
@@ -35,8 +35,9 @@ Managing and scaling a Rails-based production finance platform, focusing on deve
 - Identified and reduced Kubernetes cluster costs by 50% through right-sizing deployment resources and optimizing EKS node types and scheduling.
 - Developed automated tooling and CI/CD workflows for provisioning ephemeral development environments and production deployments, enabling rapid product iteration.
 - Managed Cloudflare infrastructure and improved site resiliency to malicious attacks and bot traffic.
-- Owned data platform, configuring CI/CD workflows for data infrastructure, managing Redshift clusters, building tooling and establishing standards for Airflow pipelines and DBT, and integrating MonteCarlo to improve observability across the data platform.
-- Reduced Data Lake storage costs by 50% by implementing S3 lifecycle management policies.
+- Owned data platform, configuring CI/CD workflows for data infrastructure, building tooling and establishing standards for Airflow pipelines and DBT, and integrating MonteCarlo to improve observability across the data platform.
+- Managed and administrated multiple Redshift clusters and AWS Date Lake infrastructure, leading initiatives to reduce costs and improve performance.
+
 
 
 #### Senior DevOps Engineer, *CoStar* (Mar 2021 – Jan 2022)

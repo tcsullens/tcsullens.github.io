@@ -43,5 +43,4 @@ A curated collection of technical articles, blog posts, and resources that I've 
 
 ## Misc / Non-Engineering
 
-- [Casual Viewing - Why Netflix looks like that](https://www.nplusonemag.com/issue-49/essays/casual-viewing/) - Will Tavlin; Netflix's pioneering of _ambient TV_ (and slop)
 - [Can History Predict the Future?](https://www.theatlantic.com/magazine/archive/2020/12/can-history-predict-future/616993/) - Nicolas Ortega, 2020; Decades of social and political trends, elite overproduction, etc culmninating in a tumultous decade.
